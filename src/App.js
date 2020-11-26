@@ -1,61 +1,43 @@
-import React, { useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Redirect,
-  Route
-} from 'react-router-dom';
-import Navbar from "./components/Navbar";
-import HomePage from "./views/HomePage";
-import LoginPage from "./views/LoginPage";
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Sitebar from './components/Navbar';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Auth from './auth/Auth'
 
-const AUTH = {
-  isAuthenticated: false,
-};
 
-function App() {
-  const [sessionToken, setSessionToken] = useState("");
+const App = ()=>{
 
-  useEffect(()=>{
-    if(localStorage.getItem("token")){
-      setSessionToken(localStorage.getItem("token"));
-      AUTH.isAuthenticated=true;
-    }
-  }, [sessionToken]);
+const [sessionToken, setSessionToken] = useState("");
 
-  const updateToken = (newToken)=> {
-    localStorage.setItem("token", newToken);
-    setSessionToken(newToken);
-  };
+useEffect(()=>{
+  if(localStorage.getItem('token')){
+    setSessionToken(localStorage.getItem('token'));
+  }
+}, [])
 
-  const clearToken=()=>{
-    localStorage.clear();
-    setSessionToken("");
-    AUTH.isAuthenticated=false;
-  };
-
-  return (
-    <Router>
-      <Navbar updateToken={updateToken}
-      logout={clearToken}
-      isLoggedIn={!!sessionToken}
-      />
-      <Switch>
-        <Route path="/login">
-          <LoginPage updateToken={updateToken} />
-        </Route>
-        <PrivateRoute path="">
-
-        </PrivateRoute>
-        <Route path="/">
-          <HomePage />
-        </Route>
-      </Switch>
-    </Router>
-  )
+const updateToken = (newToken)=>{
+  localStorage.setItem('token',newToken);
+  setSessionToken(newToken);
+  console.log(sessionToken);
 }
 
+const clearToken=()=>{
+  localStorage.clear();
+  setSessionToken('');
+}
+  return(
+    <div>
+      <Header />
+      <Router>
+        <Sitebar clickLogout={clearToken}/>
+        <Auth updateToken={updateToken}/>
+      </Router>
+      <Footer />
+    </div>
+  )
+}
 
 
 export default App;
