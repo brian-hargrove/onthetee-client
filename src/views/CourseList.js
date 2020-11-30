@@ -1,5 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import { } from 'reactstrap';
-import "../styles/CourseLists.css";
+import "../styles/CourseList.css";
 
-const CourseList =
+const CourseList = (props)=>{
+
+    return(
+        <div>
+            Golf Courses
+        </div>
+    )
+}
+
+export default CourseList;
