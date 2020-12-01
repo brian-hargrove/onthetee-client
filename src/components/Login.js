@@ -10,7 +10,7 @@ const Login = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`http://localhost:3000/user/login`,{
+        fetch(process.env.REACT_APP_URL + "user/login",{
             method: "POST",
             body: JSON.stringify({
                 user: {username: username, password: password},

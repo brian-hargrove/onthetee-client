@@ -3,7 +3,7 @@ import { Button, Form, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, M
 import { useHistory } from 'react-router-dom';
 import '../styles/Register.css';
 
-const validateUsername = RegExp("((?=.*?[0-9]).*|(?=.*?[#?!@$%^&*-]).*)");
+const validatePassword = RegExp("((?=.*?[0-9]).*|(?=.*?[#?!@$%^&*-]).*)");
 
 
 const Register = (props)=> {
@@ -25,11 +25,11 @@ const Register = (props)=> {
 
         try{
             if(!username || !email || !password) throw "Please fill out all fields";
-            if(password.length<5) throw "Password must be 5 or more characters";
-            if(username.length < 4 || !validateUsername.test(username)) throw "Username must be 4 or more characters and include 1 number and/or special character";
+            if(password.length<8 || !validatePassword.test(password)) throw "Password must be 8 or more characters and inclue 1 number and/or special character";
+            if(username.length < 6) throw "Username must be 6";
             if(password !== passwordConfirm) throw "Passwords do not match";
 
-            fetch(`http://localhost:3000/user/register`, {
+            fetch(process.env.REACT_APP_URL + "/user/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
