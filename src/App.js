@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Redirect, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./views/HomePage";
 import Login from "./components/Login"

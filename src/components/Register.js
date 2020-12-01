@@ -3,7 +3,6 @@ import { Button, Form, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, M
 import { useHistory } from 'react-router-dom';
 import '../styles/Register.css';
 
-
 const validateUsername = RegExp("((?=.*?[0-9]).*|(?=.*?[#?!@$%^&*-]).*)");
 
 

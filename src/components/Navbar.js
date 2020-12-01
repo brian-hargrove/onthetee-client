@@ -1,28 +1,29 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Navbar.css"
 import { Button, Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem } from "reactstrap";
 import { NavLink, useHistory } from "react-router-dom";
 import Register from "./Register";
+import Login from "./Login";
 
 const Sitebar = (props) => {
     const [collapsed, setCollapsed] = useState(true);
     const [showRegister, setShowRegister] = useState(false);
-    const [hasScrolled, setHasScrolled] = useState(false);
+    // const [hasScrolled, setHasScrolled] = useState(false);
 
-    useEffect(()=>{
-        document.addEventListener("scroll",handleScroll);
-        return()=>{
-            document.removeEventListener("scroll",handleScroll);
-        };
-    },[]);
+    // useEffect(()=>{
+    //     document.addEventListener("scroll",handleScroll);
+    //     return()=>{
+    //         document.removeEventListener("scroll",handleScroll);
+    //     };
+    // },[]);
 
-    const handleScroll = (event) =>{
-        if(document.documentElement.scrollTop && !hasScrolled){
-            setHasScrolled(true);
-        }else if (!document.documentElement.scrollTop){
-            setHasScrolled(false);
-        }
-    };
+    // const handleScroll = (event) =>{
+    //     if(document.documentElement.scrollTop && !hasScrolled){
+    //         setHasScrolled(true);
+    //     }else if (!document.documentElement.scrollTop){
+    //         setHasScrolled(false);
+    //     }
+    // };
     const toggleNavbar = ()=>setCollapsed(!collapsed);
     
     let history = useHistory();
@@ -45,20 +46,20 @@ const Sitebar = (props) => {
         // })}
         >
             <Navbar color="faded" light expand="md">
-                <NavbarBrand href="/" className="mr-auto"></NavbarBrand>
+                <NavbarBrand to path="/" className="mr-auto"></NavbarBrand>
                 <NavbarToggler onClick={toggleNavbar} className="mr-2" />
                 <Collapse isOpen={!collapsed} navbar>
                     <Nav navbar>
                         <NavItem>
-                            <NavLink href="/">Home</NavLink>
+                            <NavLink to path="/">Home</NavLink>
                         </NavItem>
                         {!props.isLoggedIn ? (
                             <>
                             <NavItem>
-                                <NavLink href="/course">Golf Courses</NavLink>
+                                <NavLink to path="/course">Golf Courses</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/login">Login</NavLink>
+                                <NavLink to path="/login">Login</NavLink>
                             </NavItem>
                             <NavItem>
                                 <Button onClick={openRegister}>Register</Button>
@@ -68,10 +69,10 @@ const Sitebar = (props) => {
                         {props.isLoggedIn ? (
                             <>
                             <NavItem>
-                                <NavLink href="/scoreCard">Scorecard</NavLink>
+                                <NavLink to path="/scoreCard">Scorecard</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/course">Golf Courses</NavLink>
+                                <NavLink to path="/course">Golf Courses</NavLink>
                             </NavItem>
                             <NavItem>
                                 <Button onClick={handleLogout}>Logout</Button>
@@ -142,7 +143,7 @@ export default Sitebar;
 
 //     return(
 //         <Navbar color="faded" light expand="md">
-//             <NavbarBrand href="/">On The Tee</NavbarBrand>
+//             <NavbarBrand to path="/">On The Tee</NavbarBrand>
 //             <NavbarToggler onClick={toggle}/>
 //             <Collapse isOpen={isOpen} navbar>
 //                 <Nav className="ml-auto" navbar>
