@@ -8,22 +8,23 @@ import Login from "./Login";
 const Sitebar = (props) => {
     const [collapsed, setCollapsed] = useState(true);
     const [showRegister, setShowRegister] = useState(false);
-    // const [hasScrolled, setHasScrolled] = useState(false);
+    const [showLogin, setShowLogin] = useState(false);
+    const [hasScrolled, setHasScrolled] = useState(false);
 
-    // useEffect(()=>{
-    //     document.addEventListener("scroll",handleScroll);
-    //     return()=>{
-    //         document.removeEventListener("scroll",handleScroll);
-    //     };
-    // },[]);
+    useEffect(()=>{
+        document.addEventListener("scroll",handleScroll);
+        return()=>{
+            document.removeEventListener("scroll",handleScroll);
+        };
+    },[]);
 
-    // const handleScroll = (event) =>{
-    //     if(document.documentElement.scrollTop && !hasScrolled){
-    //         setHasScrolled(true);
-    //     }else if (!document.documentElement.scrollTop){
-    //         setHasScrolled(false);
-    //     }
-    // };
+    const handleScroll = (event) =>{
+        if(document.documentElement.scrollTop && !hasScrolled){
+            setHasScrolled(true);
+        }else if (!document.documentElement.scrollTop){
+            setHasScrolled(false);
+        }
+    };
     const toggleNavbar = ()=>setCollapsed(!collapsed);
     
     let history = useHistory();
@@ -34,16 +35,18 @@ const Sitebar = (props) => {
 
     const openRegister = () => setShowRegister(true);
     const closeRegister = () => setShowRegister(false);
+    const openLogin = () => setShowLogin(true);
+    const closeLogin = () => setShowLogin(false);
 
     return(
         <div
         id="navbar"
-        // className=
-        // {
-        //     classNames({
-        //     "is-expanded": !collapsed,
-        //     "has-scrolled": hasScrolled,
-        // })}
+        className=
+        {
+            classNames({
+            "is-expanded": !collapsed,
+            "has-scrolled": hasScrolled,
+        })}
         >
             <Navbar color="faded" light expand="md">
                 <NavbarBrand to path="/" className="mr-auto"></NavbarBrand>
@@ -59,7 +62,7 @@ const Sitebar = (props) => {
                                 <NavLink to path="/course">Golf Courses</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink to path="/login">Login</NavLink>
+                                <Button onClick={openLogin}>Login</Button>
                             </NavItem>
                             <NavItem>
                                 <Button onClick={openRegister}>Register</Button>
@@ -82,6 +85,11 @@ const Sitebar = (props) => {
                     </Nav>
                 </Collapse>
             </Navbar>
+            <Login
+                updateToken={props.updateToken}
+                open={showLogin}
+                close={closeLogin}
+            />                    
             <Register
                 updateToken={props.updateToken}
                 open={showRegister}
@@ -93,12 +101,12 @@ const Sitebar = (props) => {
 
 export default Sitebar;
 
-// function classNames(classes) {
-//     return Object.entries(classes)
-//     .filter(([key,value])=>value)
-//     .map(([key,value])=>key)
-//     .join(" ");
-// }
+function classNames(classes) {
+    return Object.entries(classes)
+    .filter(([key,value])=>value)
+    .map(([key,value])=>key)
+    .join(" ");
+}
 
 
 

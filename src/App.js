@@ -1,10 +1,11 @@
 import React, {useState,useEffect} from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./views/HomePage";
-import Login from "./components/Login"
-import Footer from "./components/Footer"
+import Login from "./components/Login";
+import Footer from "./components/Footer";
+import UserInfo from "./components/UserInfo";
 const AUTH = {isAuthenticated: false};
 
 function App() {
@@ -29,21 +30,26 @@ function App() {
 
   return(
     <Router>
+     
       <Navbar
       updateToken={updateToken}
       logout={clearToken}
       isLoggedIn={!!sessionToken}
     />
     <Switch>
-      <Route path="/login">
+      <Route to path="/login">
         <Login updateToken={updateToken} />
       </Route>
+      <PrivateRoute to path="/userinfo">
+        <UserInfo token={sessionToken} />
+      </PrivateRoute>
       
       <Route path="/">
         <HomePage />
       </Route>
     </Switch>
     <Footer />
+  
     </Router>
     
   )
@@ -51,7 +57,25 @@ function App() {
 
 export default App;
 
-
+function PrivateRoute({children, ...rest}){
+  return(
+    <Route
+      {...rest}
+      render={({location})=>
+        localStorage.getItem("token") ? (
+          children
+        ):(
+          <Redirect
+          to={{
+            pathname: "/login",
+            state: {from: location},
+          }}
+          />
+        )
+      }
+      />
+  );
+}
 
 
 // import React, {useState, useEffect } from 'react';

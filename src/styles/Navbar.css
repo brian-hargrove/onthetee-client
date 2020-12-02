@@ -1,0 +1,23 @@
+#navbar {
+    background-color:	rgb(47, 153, 5);
+    font-family: "Montserrat", sans-serif;
+    /*  */
+    font-size: 17px;
+    letter-spacing: 0.05em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  #navbar.is-expanded,
+  #navbar.has-scrolled {
+    background-color: rgb(167, 193, 180);
+  }
+  
+  #navbar a {
+    color: white;
+  }
+  
