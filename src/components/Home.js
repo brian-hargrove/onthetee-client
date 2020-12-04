@@ -1,21 +1,80 @@
-import React from "react";
-import { Container } from "reactstrap";
-import { Link } from "react-router-dom";
-import "../styles/HomePage.css";
+import React, { Component } from 'react';
+import Register from './Register';
+import Login from './Login';
 
-const HomePage = () => {
-    return (
-        <Container>
-            <div id="landingPage">
-                <h1 className="landingTitle">NOW</h1>
-                <p className="landingTitleProper">On The Tee</p>
+
+class Home extends Component {
+    constructor(props) {
+        super(props);
+
+        this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
+    }
+
+    handleSuccessfulAuth(data) {
+        // this.props.handleLogin(data);
+        this.props.history.push("/dashboard");
+    }
+
+
+    render() { 
+        return ( 
+            <div>
+                <h1>Home</h1>
+                <h1>Status: {this.props.loggedInStatus}</h1>
+                <Register handleSuccessfulAuth={this.handleSuccessfulAuth} />
+                <Login handleSuccessfulAuth={this.handleSuccessfulAuth}/>
             </div>
-        </Container>
-    );
-};
+         );
+    }
+}
+ 
+export default Home;
 
 
-export default HomePage;
+
+
+
+
+
+
+
+
+<div>
+    <h1>Home</h1>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from "react";
+// import { Container } from "reactstrap";
+// import { Link } from "react-router-dom";
+// import "../styles/HomePage.css";
+
+// const HomePage = () => {
+//     return (
+//         <Container>
+//             <div id="landingPage">
+//                 <h1 className="landingTitle">NOW</h1>
+//                 <p className="landingTitleProper">On The Tee</p>
+//             </div>
+//         </Container>
+//     );
+// };
+
+
+// export default HomePage;
 
 
 
