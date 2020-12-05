@@ -5,7 +5,7 @@
 /* body */
 body {
   padding: 150px;
-  background-color: white;
+  background-color: rgb(74, 228, 74);
   font: Belleza;
 }
 
@@ -23,7 +23,7 @@ footer  p {
 
 /* main */
 .main {
-  background-color: white;
+  background-color: rgb(46, 163, 46);
   color: black;
   height: 100%;
   min-height: 100%;

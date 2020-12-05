@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import Header from './Header';
 import Register from './Register';
 import Login from './Login';
+import Footer from './Footer';
 
 
 class Home extends Component {
@@ -12,17 +14,19 @@ class Home extends Component {
 
     handleSuccessfulAuth(data) {
         // this.props.handleLogin(data);
-        this.props.history.push("/dashboard");
+        this.props.history.push("/clubhouse");
     }
 
 
     render() { 
         return ( 
             <div>
+                <Header />
                 <h1>Home</h1>
                 <h1>Status: {this.props.loggedInStatus}</h1>
                 <Register handleSuccessfulAuth={this.handleSuccessfulAuth} />
                 <Login handleSuccessfulAuth={this.handleSuccessfulAuth}/>
+                <Footer />
             </div>
          );
     }

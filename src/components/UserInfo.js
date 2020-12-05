@@ -1,20 +1,23 @@
-import React, {useState} from 'react';
-import { } from 'reactstrap';
+import React, { Component } from 'react';
 
+class UserInfo extends Component {
+    state = { 
+        constructor(props); {
+            super(props)
 
-const UserInfoPage = (props) => {
-    const { userInfo, token } = props;
+            this.state = {
 
-    
+            }
+        }
 
-
-
-    return(
-        <div>
-            <h1>USER INFO</h1>
-        </div>
-    )
+     }
+    render() { 
+        return ( 
+            <div>
+                
+            </div>
+         );
+    }
 }
-
-
-export default UserInfoPage;
+ 
+export default UserInfo;

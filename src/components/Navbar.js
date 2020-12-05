@@ -1,112 +1,168 @@
-import React, { useState, useEffect } from "react";
-import "../styles/Navbar.css"
-import { Button, Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem } from "reactstrap";
-import { NavLink, useHistory } from "react-router-dom";
-import Register from "./Register";
-import Login from "./Login";
+import React, { Component } from 'react';
+import {Nav, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
 
-const Sitebar = (props) => {
-    const [collapsed, setCollapsed] = useState(true);
-    const [showRegister, setShowRegister] = useState(false);
-    const [showLogin, setShowLogin] = useState(false);
-    const [hasScrolled, setHasScrolled] = useState(false);
+class Sitebar extends Component {
+    state = {  }
 
-    useEffect(()=>{
-        document.addEventListener("scroll",handleScroll);
-        return()=>{
-            document.removeEventListener("scroll",handleScroll);
-        };
-    },[]);
-
-    const handleScroll = (event) =>{
-        if(document.documentElement.scrollTop && !hasScrolled){
-            setHasScrolled(true);
-        }else if (!document.documentElement.scrollTop){
-            setHasScrolled(false);
-        }
-    };
-    const toggleNavbar = ()=>setCollapsed(!collapsed);
     
-    let history = useHistory();
-    const handleLogout = () => {
-        props.logout();
-        history.push("/");
-    };
-
-    const openRegister = () => setShowRegister(true);
-    const closeRegister = () => setShowRegister(false);
-    const openLogin = () => setShowLogin(true);
-    const closeLogin = () => setShowLogin(false);
-
-    return(
-        <div
-        id="navbar"
-        className=
-        {
-            classNames({
-            "is-expanded": !collapsed,
-            "has-scrolled": hasScrolled,
-        })}
-        >
-            <Navbar color="faded" light expand="md">
-                <NavbarBrand to path="/" className="mr-auto"></NavbarBrand>
-                <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-                <Collapse isOpen={!collapsed} navbar>
-                    <Nav navbar>
-                        <NavItem>
-                            <NavLink to path="/">Home</NavLink>
-                        </NavItem>
-                        {!props.isLoggedIn ? (
-                            <>
-                            <NavItem>
-                                <NavLink to path="/course">Golf Courses</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <Button onClick={openLogin}>Login</Button>
-                            </NavItem>
-                            <NavItem>
-                                <Button onClick={openRegister}>Register</Button>
-                            </NavItem>
-                            </>
-                        ): null}
-                        {props.isLoggedIn ? (
-                            <>
-                            <NavItem>
-                                <NavLink to path="/scoreCard">Scorecard</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink to path="/course">Golf Courses</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <Button onClick={handleLogout}>Logout</Button>
-                            </NavItem>
-                            </>
-                        ) : null}
-                    </Nav>
-                </Collapse>
-            </Navbar>
-            <Login
-                updateToken={props.updateToken}
-                open={showLogin}
-                close={closeLogin}
-            />                    
-            <Register
-                updateToken={props.updateToken}
-                open={showRegister}
-                close={closeRegister}
-            />
-        </div>
-    );
-};
-
+    render() { 
+        return (
+            <div>
+              <Nav pills>
+                <NavItem>
+                  <NavLink href="#" active>Link</NavLink>
+                </NavItem>
+                
+                <NavItem>
+                  <NavLink href="#">Link</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="#">Another Link</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink disabled href="#">Disabled Link</NavLink>
+                </NavItem>
+              </Nav>
+            </div>
+          );
+    }
+}
+ 
 export default Sitebar;
 
-function classNames(classes) {
-    return Object.entries(classes)
-    .filter(([key,value])=>value)
-    .map(([key,value])=>key)
-    .join(" ");
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from "react";
+// import "../styles/Navbar.css"
+// import { Button, Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem } from "reactstrap";
+// import { NavLink, useHistory } from "react-router-dom";
+// import Register from "./Register";
+// import Login from "./Login";
+
+// const Sitebar = (props) => {
+//     const [collapsed, setCollapsed] = useState(true);
+//     const [showRegister, setShowRegister] = useState(false);
+//     const [showLogin, setShowLogin] = useState(false);
+//     const [hasScrolled, setHasScrolled] = useState(false);
+
+//     useEffect(()=>{
+//         document.addEventListener("scroll",handleScroll);
+//         return()=>{
+//             document.removeEventListener("scroll",handleScroll);
+//         };
+//     },[]);
+
+//     const handleScroll = (event) =>{
+//         if(document.documentElement.scrollTop && !hasScrolled){
+//             setHasScrolled(true);
+//         }else if (!document.documentElement.scrollTop){
+//             setHasScrolled(false);
+//         }
+//     };
+//     const toggleNavbar = ()=>setCollapsed(!collapsed);
+    
+//     let history = useHistory();
+//     const handleLogout = () => {
+//         props.logout();
+//         history.push("/");
+//     };
+
+//     const openRegister = () => setShowRegister(true);
+//     const closeRegister = () => setShowRegister(false);
+//     const openLogin = () => setShowLogin(true);
+//     const closeLogin = () => setShowLogin(false);
+
+//     return(
+//         <div
+//         id="navbar"
+//         className=
+//         {
+//             classNames({
+//             "is-expanded": !collapsed,
+//             "has-scrolled": hasScrolled,
+//         })}
+//         >
+//             <Navbar color="faded" light expand="md">
+//                 <NavbarBrand to path="/" className="mr-auto"></NavbarBrand>
+//                 <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+//                 <Collapse isOpen={!collapsed} navbar>
+//                     <Nav navbar>
+//                         <NavItem>
+//                             <NavLink to path="/">Home</NavLink>
+//                         </NavItem>
+//                         {!props.isLoggedIn ? (
+//                             <>
+//                             <NavItem>
+//                                 <NavLink to path="/course">Golf Courses</NavLink>
+//                             </NavItem>
+//                             <NavItem>
+//                                 <Button onClick={openLogin}>Login</Button>
+//                             </NavItem>
+//                             <NavItem>
+//                                 <Button onClick={openRegister}>Register</Button>
+//                             </NavItem>
+//                             </>
+//                         ): null}
+//                         {props.isLoggedIn ? (
+//                             <>
+//                             <NavItem>
+//                                 <NavLink to path="/scoreCard">Scorecard</NavLink>
+//                             </NavItem>
+//                             <NavItem>
+//                                 <NavLink to path="/course">Golf Courses</NavLink>
+//                             </NavItem>
+//                             <NavItem>
+//                                 <Button onClick={handleLogout}>Logout</Button>
+//                             </NavItem>
+//                             </>
+//                         ) : null}
+//                     </Nav>
+//                 </Collapse>
+//             </Navbar>
+//             <Login
+//                 updateToken={props.updateToken}
+//                 open={showLogin}
+//                 close={closeLogin}
+//             />                    
+//             <Register
+//                 updateToken={props.updateToken}
+//                 open={showRegister}
+//                 close={closeRegister}
+//             />
+//         </div>
+//     );
+// };
+
+// export default Sitebar;
+
+// function classNames(classes) {
+//     return Object.entries(classes)
+//     .filter(([key,value])=>value)
+//     .map(([key,value])=>key)
+//     .join(" ");
+// }
 
 
 

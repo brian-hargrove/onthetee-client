@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Form, Button, Input, Label, FormGroup} from 'reactstrap';
+import {Form, Button, Input, FormGroup} from 'reactstrap';
 
 
 
@@ -64,16 +64,18 @@ class Register extends Component {
                             }
                         })
                     })
-                    .then(response=>{
-                         {
-                            this.props.handleSuccessfulAuth(response.data);
-                        }
-                    })
-                    // .then(response => response.json())
-                    // .then((data)=>{
-                    //     console.log(data);
-                    //    alert("User is registered. Head to the Club House");
-                    // })                    
+                    // .then(response=>{
+                    //      {
+                    //         this.props.handleSuccessfulAuth(response.data);
+                            
+                    //     }
+                    // })
+                    .then(response => response.json())
+                    .then((data)=>{
+                        console.log(data);
+                       
+                       alert("Congrats. Please login to access The Clubhouse");
+                    })                    
                     .catch(error => console.log(error));
                 } else {
                     alert("Passwords do not match");}
@@ -91,40 +93,43 @@ class Register extends Component {
             <div id="registerForm">
                 <Form className="register" onSubmit={this.handleSubmit}>
                     <FormGroup>
-                        <Label htmlFor="registerUsername">Username</Label>
                         <Input
                             id="registerUsername"
                             name="username"
+                            placeholder="Username"
                             type="text"
                             value={this.state.username}
                             onChange={this.handleChange}
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="registerEmail">Email</Label>
+                        
                         <Input
                             id="registerEmail"
                             name="email"
+                            placeholder="Email Address"
                             type="email"
                             value={this.state.email}
                             onChange={this.handleChange}
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="registerPassword">Password</Label>
+                        
                         <Input
                             id="registerPassword"
                             name="password"
+                            placeholder="Password"
                             type="password"
                             value={this.state.password}
                             onChange={this.handleChange}
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="registerPasswordConfirm">Confirm Password</Label>
+                        
                         <Input
                             id="registerPasswordConfirm"
                             name="passwordConfirm"
+                            placeholder="Confirm Password"
                             type="password"
                             value={this.state.passwordConfirm}
                             onChange={this.handleChange}

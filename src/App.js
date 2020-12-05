@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Home from './components/Home';
-import Dashboard from "./components/Dashboard";
-
+import Clubhouse from "./components/Clubhouse";
+import Sitebar from "./components/Navbar";
 
 class App extends Component {
   constructor(props) {
@@ -14,6 +14,8 @@ class App extends Component {
     };
 
     this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+    
   }
 
   handleLogin(data) {
@@ -23,22 +25,32 @@ class App extends Component {
     })
   }
 
+  handleLogout(){
+    this.setState({
+      loggedInStatus: "NOT_LOGGED_IN",
+      user: {}
+    })
+  }
+
   render() { 
     return (
       <div className="app">
+        <Sitebar />
         <BrowserRouter>
         <Switch>
           <Route 
             exact 
             path={"/"} 
             render = {props => (
-          <Home {...props}  loggedInStatus={this.state.loggedInStatus} />
+          <Home {...props}
+            handleLogout={this.handleLogout}
+            loggedInStatus={this.state.loggedInStatus} />
           )} />
           <Route 
             exact 
-            path={"/dashboard"} 
+            path={"/clubhouse"} 
             render = {props => (
-              <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
+              <Clubhouse {...props} loggedInStatus={this.state.loggedInStatus} />
           )} />
           
         </Switch>
