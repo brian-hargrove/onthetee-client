@@ -5,6 +5,8 @@ class Sahm extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            golfcourse:"",
+            date:"",
             hole1:"",
             hole2:"",
             hole3:"",
@@ -23,6 +25,7 @@ class Sahm extends Component {
             hole16:"",
             hole17:"",
             hole18:"",
+            notes: ""
             
          };
          this.handleChange = this.handleChange.bind(this);
@@ -38,17 +41,20 @@ class Sahm extends Component {
 
     handleSubmit(event){
         event.preventDefault();
-        const { hole1, hole2, hole3, hole4, hole5, hole6, hole7, hole8, hole9, hole10, hole11, hole12, hole13, hole14, hole15, hole16, hole17, hole18} = this.state;
+        const { golfcourse, date, hole1, hole2, hole3, hole4, hole5, hole6, hole7, hole8, hole9, hole10, hole11, hole12, hole13, hole14, hole15, hole16, hole17, hole18, notes} = this.state;
+
     
 
         fetch(`${process.env.REACT_APP_URL}/score/new`,{
             method: "POST",
             headers: new Headers({
                 "Content-Type": "application/json",
-                "Authorization": "localStorage.getItem(token)"  //! might be incorrect
+                "Authorization": localStorage.getItem('token')  //! might be incorrect
             }),
             body: JSON.stringify({
                 score: {
+                    golfcourse: golfcourse,
+                    date: date,
                     hole1: hole1,
                     hole2: hole2,
                     hole3: hole3,
@@ -67,6 +73,7 @@ class Sahm extends Component {
                     hole16: hole16,
                     hole17: hole17,
                     hole18: hole18,
+                    notes: notes
                 }
             }),
         })
@@ -83,6 +90,25 @@ class Sahm extends Component {
     render() { 
         return ( 
             <Form onSubmit={this.handleSubmit}>
+                <FormGroup>
+                    <Label htmlfor="date">Date</Label>
+                    <Input
+                        type="date"
+                        name="date"
+                        className="hole"
+                        onChange={this.handleChange}
+                    ></Input>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlfor="golfcourse">Golf Course</Label>
+                    <Input
+                        type="text"
+                        name="golfcourse"
+                        className="hole"
+                        onChange={this.handleChange}
+                    ></Input>
+                </FormGroup>
+                
                 <FormGroup>
                     <Label htmlfor="hole1">Hole 1</Label>
                     <Input
@@ -241,6 +267,15 @@ class Sahm extends Component {
                     <Input
                         type="number"
                         name="hole18"
+                        className="hole"
+                        onChange={this.handleChange}
+                    ></Input>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlfor="notes">Course Notes</Label>
+                    <Input
+                        type="text"
+                        name="notes"
                         className="hole"
                         onChange={this.handleChange}
                     ></Input>
