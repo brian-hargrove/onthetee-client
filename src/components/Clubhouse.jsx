@@ -1,7 +1,8 @@
-import userEvent from '@testing-library/user-event';
 import React, { Component } from 'react';
+import { Link, Route } from 'react-router-dom';
 import Scorecard from "./Scorecard";
-import Sahm from "./Sahm"
+import EnterScore from "./EnterScore"
+import Switch from 'react-bootstrap/esm/Switch';
 
 
 class Clubhouse extends Component {
@@ -17,10 +18,20 @@ class Clubhouse extends Component {
     render() { 
         return ( 
             <div>
-                <h1>Welcome to the Clubhouse</h1>
+                <h1>THE CLUBHOUSE</h1>
                 <p> Welcome back to the clubhouse</p>
+                    <Switch>
+                        <li><Link to="/enterround" >Enter Your Round</Link></li> 
+                        
+                    </Switch>
+                   
+                   
+            
+               
+                
                 <Scorecard />
-                <Sahm />
+                {/* <EnterScore /> */}
+               
             </div>
          );
     }

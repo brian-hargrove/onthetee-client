@@ -3,6 +3,7 @@ import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Home from './components/Home';
 import Clubhouse from "./components/Clubhouse";
 import Sitebar from "./components/Navbar";
+import EnterScore from "./components/EnterScore"
 
 class App extends Component {
   constructor(props) {
@@ -52,7 +53,12 @@ class App extends Component {
             render = {props => (
               <Clubhouse {...props} loggedInStatus={this.state.loggedInStatus} />
           )} />
-          
+          <Route 
+            exact 
+            path={"/enterround"} 
+            render = {props => (
+              <EnterScore {...props} loggedInStatus={this.state.loggedInStatus} />
+          )} />
         </Switch>
         </BrowserRouter>
         

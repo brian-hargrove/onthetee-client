@@ -10,14 +10,14 @@ class Sitebar extends Component {
             <div>
               <Nav pills>
                 <NavItem>
-                  <NavLink href="#" active>Link</NavLink>
+                  <NavLink href="/" active>Home</NavLink>
                 </NavItem>
                 
                 <NavItem>
-                  <NavLink href="#">Link</NavLink>
+                  <NavLink href="/enterscore">Enter Round</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Another Link</NavLink>
+                  <NavLink href="/clubhouse">Clubhouse</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink disabled href="#">Disabled Link</NavLink>

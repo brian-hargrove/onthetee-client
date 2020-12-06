@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap'
+import EnterScore from './EnterScore';
 
 class Scorecard extends Component {
     state = {  }
@@ -49,7 +50,7 @@ class Scorecard extends Component {
                             <th>In</th>
                             <th>Tot</th>
                         </tr>
-                        <tr>
+                        {/* <tr>
                             <th></th>
                             <th>Sahm Golf Course</th>
                             <th>Yards</th>
@@ -100,11 +101,11 @@ class Scorecard extends Component {
                             <th>4</th>
                             <th>35</th>
                             <th>70</th>
-                        </tr>
+                        </tr> */}
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">1</th>
+                            <th scope="row"></th>
                             <td>2</td>
                             <td>3</td>
                             <td>4</td>
