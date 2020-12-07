@@ -60,7 +60,7 @@ class EnterScore extends Component {
         event.preventDefault();
         const { golfcourse, date, hole1, hole2, hole3, hole4, hole5, hole6, hole7, hole8, hole9, hole10, hole11, hole12, hole13, hole14, hole15, hole16, hole17, hole18, notes} = this.state;
 
-        this.props.history.push("/scorecard")
+        this.props.history.push("/clubhouse")
        
     
 
@@ -295,18 +295,6 @@ class EnterScore extends Component {
                             onChange={this.handleChange}
                         ></Input>
                     </FormGroup>
-                    
-                    <FormGroup>
-                        <Label htmlfor="front9">Front 9</Label>
-                        <Input
-                            type="number"
-                            name="front9"
-                            className="hole"
-                            // value={this.state.addFront9}
-                            onSubmit={this.addFront9}
-                        ></Input>
-                    </FormGroup>
-                    
                     <FormGroup>
                         <Label htmlfor="notes">Course Notes</Label>
                         <Input

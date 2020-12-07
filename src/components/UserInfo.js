@@ -47,7 +47,42 @@ class UserInfo extends Component {
             <div>
                 <h1>Welcome to On The Tee</h1>
                 <p> Before you begin, we would like to get to know you.</p>
-                
+                <Form>
+                    <FormGroup>
+                        <Input
+                            id="handed"
+                            name="hand"
+                            placeholder="Are you right-handed, left-handed or both"
+                            type="text"
+                            value={this.state.hand}
+                            onChange={this.handleChange}
+                        ></Input>
+                    </FormGroup>
+                    <FormGroup>
+                        <Input
+                            id="favCourse"
+                            name="favCourse"
+                            placeholder="What is your favorite course?"
+                            type="text"
+                            value={this.state.favCourse}
+                            onChange={this.handleChange}
+                        ></Input>
+                    </FormGroup>
+                    <FormGroup>
+                        <Input
+                            id="favGolfer"
+                            name="favGolfer"
+                            placeholder="Who is your favorite golfer"
+                            type="text"
+                            value={this.state.favGolfer}
+                            onChange={this.handleChange}
+                        ></Input>
+                    </FormGroup>
+                </Form>
+                <Button
+                    className="button"
+                    type="submit"
+                >Submit</Button>
             </div>
 
         );

@@ -4,7 +4,7 @@ import Home from './components/Home';
 import Clubhouse from "./components/Clubhouse";
 import Sitebar from "./components/Navbar";
 import EnterScore from "./components/EnterScore";
-import Scorecard from "./components/Scorecard"
+import Scorecard from "./components/Scorecard";
 
 
 class App extends Component {
@@ -72,8 +72,7 @@ class App extends Component {
             exact 
             path={"/scorecard"} 
             render = {props => (
-              <Scorecard {...props} 
-                loggedInStatus={this.state.loggedInStatus} />
+              <Scorecard {...props} loggedInStatus={this.state.loggedInStatus} />
             )}
           />
         </Switch>

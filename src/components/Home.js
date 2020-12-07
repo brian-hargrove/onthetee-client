@@ -23,8 +23,8 @@ class Home extends Component {
     render() { 
         return ( 
             <div>
-                <Header />
-               <Register handleSuccessfulAuth={this.handleSuccessfulAuth} />
+                
+                <Register handleSuccessfulAuth={this.handleSuccessfulAuth} />
                 <Login handleSuccessfulAuth={this.handleSuccessfulAuth}/>
                 <Footer />
             </div>
