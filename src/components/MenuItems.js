@@ -21,8 +21,8 @@ const MenuItems = [
 
     },
     {
-        title: 'Contact Us',
-        url: '#',
+        title: 'User info',
+        url: '/userinfo',
         cName: 'nav-links',
 
     },

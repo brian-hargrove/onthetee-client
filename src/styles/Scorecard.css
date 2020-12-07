@@ -1,0 +1,30 @@
+.scoreTable {
+    margin-right: auto;
+    margin-left: auto;
+
+    background-color: rgb(196,164,118);
+    /* table-layout: auto;
+    width: 700px; */
+    
+}
+
+tr:hover {background-color:#e7e0e0;}
+
+th,td {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+th {
+    background-color: rgb(80,104,127);
+    color: whitesmoke;
+}
+
+
+.divScorecard{
+    /* background-image:url(../assests/scorecard.jpg); */
+    background-size: 100vh;
+    background-repeat: no-repeat;
+
+
+}

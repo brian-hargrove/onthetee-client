@@ -5,6 +5,7 @@ import Clubhouse from "./components/Clubhouse";
 import Sitebar from "./components/Navbar";
 import Register from "./components/Register";
 import EnterScore from "./components/EnterScore";
+import UserInfo from "./components/UserInfo";
 import Scorecard from "./components/Scorecard";
 import './App.css'
 
@@ -82,6 +83,13 @@ class App extends Component {
             path={"/enterround"} 
             render = {props => (
               <EnterScore {...props} loggedInStatus={this.state.loggedInStatus} />
+            )}
+          />
+          <Route 
+            exact 
+            path={"/userinfo"} 
+            render = {props => (
+              <UserInfo {...props} loggedInStatus={this.state.loggedInStatus} />
             )}
           />
         </Switch>

@@ -13,7 +13,13 @@ class UserInfo extends Component {
           }
 
         this.userInfoSubmit = this.userInfoSubmit.bind(this);
-        this.userInfoChange = this.userInfoChange.bing(this);
+        this.userInfoChange = this.userInfoChange.bind(this);
+    };
+
+    userInfoChange (event){
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     };
 
     userInfoSubmit(event){
@@ -23,11 +29,11 @@ class UserInfo extends Component {
         let favCourse = this.state.favCourse;
         let favGolfer = this.state.favGolfer;
 
-        fetch(`${APIURL}/userinfo/new`, {
+        fetch(`${process.env.REACT_APP_URL}/userinfo/new`, {
             method: "POST",
             headers: new Headers ({
                 "Content-Type": "application/json",
-                Authorization: localStorage.getItem('token')
+                "Authorization": localStorage.getItem('token')
             }),
             body: JSON.stringify({
                 userinfo: {
@@ -38,7 +44,10 @@ class UserInfo extends Component {
             })
             })
             .then(response=>response.json())
-            .then((data)=>{console.log('userinfo', data)})
+            .then((data)=>{console.log('userinfo', data);
+            window.location.href='/clubhouse';
+        })
+        .catch(error=>console.log(error));
     };
 
     
@@ -47,7 +56,7 @@ class UserInfo extends Component {
             <div>
                 <h1>Welcome to On The Tee</h1>
                 <p> Before you begin, we would like to get to know you.</p>
-                <Form>
+                <Form className="userInfoForm" onSubmit={this.userInfoSubmit}>
                     <FormGroup>
                         <Input
                             id="handed"
@@ -55,7 +64,7 @@ class UserInfo extends Component {
                             placeholder="Are you right-handed, left-handed or both"
                             type="text"
                             value={this.state.hand}
-                            onChange={this.handleChange}
+                            onChange={this.userInfoChange}
                         ></Input>
                     </FormGroup>
                     <FormGroup>
@@ -65,7 +74,7 @@ class UserInfo extends Component {
                             placeholder="What is your favorite course?"
                             type="text"
                             value={this.state.favCourse}
-                            onChange={this.handleChange}
+                            onChange={this.userInfoChange}
                         ></Input>
                     </FormGroup>
                     <FormGroup>
@@ -75,14 +84,15 @@ class UserInfo extends Component {
                             placeholder="Who is your favorite golfer"
                             type="text"
                             value={this.state.favGolfer}
-                            onChange={this.handleChange}
+                            onChange={this.userInfoChange}
                         ></Input>
                     </FormGroup>
-                </Form>
-                <Button
+                    <Button
                     className="button"
                     type="submit"
                 >Submit</Button>
+                </Form>
+                
             </div>
 
         );

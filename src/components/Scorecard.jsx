@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Table } from 'reactstrap'
+import { Table, Button } from 'reactstrap'
 import APIURL from '../helpers/environment';
+import '../styles/Scorecard.css';
 
 class Scorecard extends Component {
     constructor(props) {
@@ -42,7 +43,7 @@ class Scorecard extends Component {
             method: "GET",
             headers: new Headers ({
                 "Content-Type": "application/json",
-                "Authorization": localStorage.getItem('token')                
+                "Authorization": localStorage.getItem('token')
             }),
         })
         .then((response)=>response.json())
@@ -133,17 +134,25 @@ class Scorecard extends Component {
         })
     }
 
-
+    deleteScore(){
+        fetch(`${process.env.REACT_APP_URL}/score/:id`, {
+            method: "DELETE",
+            headers: new Headers ({
+                "Content-Type": "application/json",
+                Authorization: localStorage.getItem('token'),
+            }),
+        }).then(()=>console.log("Round deleted"))
+    }
 
     render() { 
         return (
-            <div>
+            <div className="divScorecard">
                
-                <Table hover>
-                    <thead>
-                        <tr color="success">
-                            <th>#</th>
+                <Table className="scoreTable" hover>
+                    <thead >
+                        <tr >
                             <th>Date</th>
+                            <th id="thCourse">Golf Course</th>
                             <th> 1</th>
                             <th> 2</th>
                             <th> 3</th>
@@ -172,6 +181,7 @@ class Scorecard extends Component {
                     <tbody>
                         {this.state.scores ? this.displayScores() : this.populateCard()}                        
                     </tbody>
+                   
                 </Table>
             </div>
          );
