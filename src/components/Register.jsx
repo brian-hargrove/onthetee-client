@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Form, Button, Input, FormGroup} from 'reactstrap';
 import UserInfo from './UserInfo';
-
+import APIURL from '../helpers/environment';
 
 class Register extends Component {
     constructor(props) {
@@ -51,7 +51,7 @@ class Register extends Component {
         if(username && password && email) {
             if(this.userValid(username, password)){
                 if(password === passwordConfirm){
-                    fetch(process.env.REACT_APP_URL+"/user/register", {
+                    fetch(APIURL+"/user/register", {
                         method: "POST",
                         headers: new Headers ({
                             "Content-Type": "application/json"

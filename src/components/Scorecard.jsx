@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap'
-
+import APIURL from '../helpers/environment';
 
 class Scorecard extends Component {
     constructor(props) {
@@ -37,7 +37,7 @@ class Scorecard extends Component {
 
     populateCard (){
 
-        fetch(`${process.env.REACT_APP_URL}/score/all`,{
+        fetch(`${APIURL}/score/all`,{
             method: "GET",
             headers: new Headers ({
                 "Content-Type": "application/json",

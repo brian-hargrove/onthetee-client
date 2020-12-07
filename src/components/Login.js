@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Form, Button, Input, Label, FormGroup} from 'reactstrap';
-import axios from 'axios';
+import APIURL from '../helpers/environment';
 
 
 class Login extends Component {
@@ -28,7 +28,7 @@ class Login extends Component {
         event.preventDefault();
         const { username, password } = this.state;
 
-        fetch(`${process.env.REACT_APP_URL}/user/login`, {
+        fetch(`${APIURL}/user/login`, {
             method: "POST",
             headers: new Headers ({
                 "Content-Type": "application/json"

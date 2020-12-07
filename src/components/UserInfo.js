@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from 'reactstrap';
-
+import APIURL from '../helpers/environment';
 
 class UserInfo extends Component {
     constructor(props){
@@ -23,7 +23,7 @@ class UserInfo extends Component {
         let favCourse = this.state.favCourse;
         let favGolfer = this.state.favGolfer;
 
-        fetch(`${process.env.REACT_APP_URL}/userinfo/new`, {
+        fetch(`${APIURL}/userinfo/new`, {
             method: "POST",
             headers: new Headers ({
                 "Content-Type": "application/json",

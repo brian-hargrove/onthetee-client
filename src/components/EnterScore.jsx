@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Input, Label, FormGroup, Button } from 'reactstrap';
+import APIURL from '../helpers/environment';
 
 
 class EnterScore extends Component {
@@ -64,7 +65,7 @@ class EnterScore extends Component {
        
     
 
-        fetch(`${process.env.REACT_APP_URL}/score/new`,{
+        fetch(`${APIURL}/score/new`,{
             method: "POST",
             headers: new Headers({
                 "Content-Type": "application/json",
