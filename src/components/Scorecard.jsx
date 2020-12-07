@@ -1,22 +1,54 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap'
-import EnterScore from './EnterScore';
+
 
 class Scorecard extends Component {
-    state = {  }
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            golfcourse:"",
+            date:"",
+            hole1:"",
+            hole2:"",
+            hole3:"",
+            hole4:"",
+            hole5:"",
+            hole6:"",
+            hole7:"",
+            hole8:"",
+            hole9:"",
+            hole10:"",
+            hole11:"",
+            hole12:"",
+            hole13:"",
+            hole14:"",
+            hole15:"",
+            hole16:"",
+            hole17:"",
+            hole18:"",
+            notes: ""
+        }
+
+    }
+    
+
+
 
     populateCard (){
 
-        fetch(`http://localhost:3000/scorecard/all`,{
+        fetch(`${process.env.REACT_APP_URL}/score/all`,{
             method: "GET",
             headers: new Headers ({
                 "Content-Type": "application/json",
-                
+                "Authorization": localStorage.getItem('token')                
             }),
         })
         .then((response)=>response.json())
         .then((body)=>console.log(body))
+        
         .catch((error)=>console.log(error));
+        
     }
     
     render() { 
@@ -105,8 +137,8 @@ class Scorecard extends Component {
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row"></th>
-                            <td>2</td>
+                            <th>Date</th>
+                            <td>golfcourse</td>
                             <td>3</td>
                             <td>4</td>
                             <td>5</td>

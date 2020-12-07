@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
 import Home from './components/Home';
 import Clubhouse from "./components/Clubhouse";
 import Sitebar from "./components/Navbar";
-import EnterScore from "./components/EnterScore"
+import EnterScore from "./components/EnterScore";
+import Scorecard from "./components/Scorecard"
+
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +18,14 @@ class App extends Component {
 
     this.handleLogin = this.handleLogin.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleReset = this.handleReset.bind(this);
     
+  }
+
+  handleReset(){
+    this.setState({
+      data: ""
+    })
   }
 
   handleLogin(data) {
@@ -59,6 +68,14 @@ class App extends Component {
             render = {props => (
               <EnterScore {...props} loggedInStatus={this.state.loggedInStatus} />
           )} />
+          <Route 
+            exact 
+            path={"/scorecard"} 
+            render = {props => (
+              <Scorecard {...props} 
+                loggedInStatus={this.state.loggedInStatus} />
+            )}
+          />
         </Switch>
         </BrowserRouter>
         

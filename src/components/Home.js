@@ -10,21 +10,21 @@ class Home extends Component {
         super(props);
 
         this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
+        
     }
-
+    
     handleSuccessfulAuth(data) {
         // this.props.handleLogin(data);
         this.props.history.push("/clubhouse");
     }
 
+    
 
     render() { 
         return ( 
             <div>
                 <Header />
-                <h1>Home</h1>
-                <h1>Status: {this.props.loggedInStatus}</h1>
-                <Register handleSuccessfulAuth={this.handleSuccessfulAuth} />
+               <Register handleSuccessfulAuth={this.handleSuccessfulAuth} />
                 <Login handleSuccessfulAuth={this.handleSuccessfulAuth}/>
                 <Footer />
             </div>
@@ -42,10 +42,6 @@ export default Home;
 
 
 
-
-<div>
-    <h1>Home</h1>
-</div>
 
 
 

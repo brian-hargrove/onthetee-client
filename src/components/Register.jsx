@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Form, Button, Input, FormGroup} from 'reactstrap';
-
+import UserInfo from './UserInfo';
 
 
 class Register extends Component {
@@ -72,9 +72,12 @@ class Register extends Component {
                     // })
                     .then(response => response.json())
                     .then((data)=>{
+                        localStorage.setItem('token',data.sessionToken);
                         console.log(data);
+                        // <UserInfo />
+                        window.location.href='/userinfo';
                        
-                       alert("Congrats. Please login to access The Clubhouse");
+                    //    alert("Congrats. Please login to access The Clubhouse");
                     })                    
                     .catch(error => console.log(error));
                 } else {

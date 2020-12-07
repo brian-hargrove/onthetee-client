@@ -33,14 +33,7 @@ class EnterScore extends Component {
          this.handleSubmit = this.handleSubmit.bind(this);
          };
     
-    cardReset = () => {
-        this.setState({
-            hole1: "",
-            hole2:""
-        })
-        
-    }
-         
+           
 
     handleChange(event){
         this.setState({
@@ -67,6 +60,8 @@ class EnterScore extends Component {
         event.preventDefault();
         const { golfcourse, date, hole1, hole2, hole3, hole4, hole5, hole6, hole7, hole8, hole9, hole10, hole11, hole12, hole13, hole14, hole15, hole16, hole17, hole18, notes} = this.state;
 
+        this.props.history.push("/scorecard")
+       
     
 
         fetch(`${process.env.REACT_APP_URL}/score/new`,{
@@ -103,9 +98,11 @@ class EnterScore extends Component {
         })
         .then((response)=>response.json())
         .then((data)=>{
-            console.log(data)})
+            console.log(data);
+            alert("Your round has been entered")
+        })
         .catch((error)=>{console.log(error);
-      
+            alert("You must be logged in to save a round.")
     });
     }
 
@@ -323,7 +320,8 @@ class EnterScore extends Component {
                         className="button"
                         type="submit"
                         
-                    >Save Score</Button>
+                    >Save Score
+                    </Button>
                 </Form>
             </div>
          );

@@ -1,34 +1,91 @@
 import React, { Component } from 'react';
-import {Nav, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
+import {Route} from 'react-router-dom';
+import App from '../App';
+import MenuItems from './MenuItems';
+import '../styles/Navbar.css';
+import { Button } from './Button';
 
 class Sitebar extends Component {
-    state = {  }
+  state = { clicked: false }
 
+  handleClick = () => {
+    this.setState({clicked: !this.state.clicked })
+  }
+
+  handleLogout = ()=>{
     
-    render() { 
-        return (
-            <div>
-              <Nav pills>
-                <NavItem>
-                  <NavLink href="/" active>Home</NavLink>
-                </NavItem>
-                
-                <NavItem>
-                  <NavLink href="/enterscore">Enter Round</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/clubhouse">Clubhouse</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink disabled href="#">Disabled Link</NavLink>
-                </NavItem>
-              </Nav>
-            </div>
-          );
-    }
+    localStorage.clear();
+    window.location.href='/';
+    
+    
+  };
+
+
+  render() { 
+    return (
+      <div className="NavbarItems">
+      <nav ></nav>
+        <h1 className="navbar-logo">On The Tee  <i className="fas fa-golf-ball"></i></h1>
+        <div className="menu-icon" onClick={this.handleClick}>
+          <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}/>
+
+
+        </div>
+        <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+          {MenuItems.map((item, index)=>{
+            return (
+              <li key={index}>
+                <a className={item.cName} href={item.url}>
+                  {item.title}
+                </a>
+              </li>
+            )
+          })}
+         
+          
+        </ul>
+        <Button onClick={this.handleLogout}>Logout</Button>
+        </div>
+      );
+  }
 }
  
 export default Sitebar;
+
+
+
+
+
+// import React, { Component } from 'react';
+// import {Nav, NavItem, NavLink} from 'reactstrap';
+
+// class Sitebar extends Component {
+    
+//     state = {  }
+
+    
+//     render() { 
+//         return (
+//             <div>
+//               <Nav pills>
+//                 <NavItem>
+//                   <NavLink href="/" active>Home</NavLink>
+//                 </NavItem>
+                
+//                 <NavItem>
+//                   <NavLink href="/enterscore">Enter Round</NavLink>
+//                 </NavItem>
+//                 <NavItem>
+//                   <NavLink href="/clubhouse">Clubhouse</NavLink>
+//                 </NavItem>
+               
+//               </Nav>
+//             </div>
+//           );
+//     }
+// }
+ 
+// export default Sitebar;
 
 
 
