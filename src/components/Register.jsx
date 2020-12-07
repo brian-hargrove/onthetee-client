@@ -52,7 +52,7 @@ class Register extends Component {
         if(username && password && email) {
             if(this.userValid(username, password)){
                 if(password === passwordConfirm){
-                    fetch(`${APIURL}/user/register`, {
+                    fetch(`${process.env.REACT_APP_URL}/user/register`, {
                         method: "POST",
                         headers: new Headers ({
                             "Content-Type": "application/json"

@@ -65,7 +65,7 @@ class EnterScore extends Component {
        
     
 
-        fetch(`${APIURL}/score/new`,{
+        fetch(`${process.env.REACT_APP_URL}/score/new`,{
             method: "POST",
             headers: new Headers({
                 "Content-Type": "application/json",

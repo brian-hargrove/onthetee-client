@@ -28,7 +28,7 @@ class Login extends Component {
         event.preventDefault();
         const { username, password } = this.state;
 
-        fetch(`${APIURL}/user/login`, {
+        fetch(`${process.env.REACT_APP_URL}/user/login`, {
             method: "POST",
             headers: new Headers ({
                 "Content-Type": "application/json"
