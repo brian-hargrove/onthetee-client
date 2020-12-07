@@ -1,0 +1,129 @@
+.body {
+    background-color: brown;
+}
+ h3{
+     padding-left: 500px;
+     padding-bottom: 20px;
+ }
+#enterScore{
+    /* display: flex;
+    flex-direction: column; */
+    padding-left: 500px;
+
+    
+}
+
+.hole{
+    background-color: white;
+    opacity: 4;
+}
+
+#date {
+    padding-right: 58px;
+    font-weight: bold;
+}
+
+#golfCourse {
+    padding-right: 5px;
+    font-weight: bold;
+}
+
+#hole1 {
+    padding-right: 50px;
+    font-weight: bold;
+}
+
+#hole2 {
+    padding-right: 47px;
+    font-weight: bold;
+}
+
+#hole3 {
+    padding-right: 47px;
+    font-weight: bold;
+}
+
+#hole4 {
+    padding-right: 45px;
+    font-weight: bold;
+}
+
+#hole5 {
+    padding-right: 47px;
+    font-weight: bold;
+}
+
+#hole6 {
+    padding-right: 47px;
+    font-weight: bold;
+}
+
+#hole7 {
+    padding-right: 47px;
+    font-weight: bold;
+}
+
+#hole8 {
+    padding-right: 47px;
+    font-weight: bold;
+}
+
+#hole9 {
+    padding-right: 48px;
+    font-weight: bold;
+}
+
+#hole10 {
+    padding-right: 42px;
+    font-weight: bold;
+}
+
+#hole11 {
+    padding-right: 46.5px;
+    font-weight: bold;
+}
+
+#hole12 {
+    padding-right: 43px;
+    font-weight: bold;
+}
+
+#hole13 {
+    padding-right: 43px;
+    font-weight: bold;
+}
+
+#hole14 {
+    padding-right: 41.5px;
+    font-weight: bold;
+}
+
+#hole15 {
+    padding-right: 42px;
+    font-weight: bold;
+}
+
+#hole16 {
+    padding-right: 42px;
+    font-weight: bold;
+}
+
+#hole17 {
+    padding-right: 42px;
+    font-weight: bold;
+}
+
+#hole18 {
+    padding-right: 42px;
+    font-weight: bold;
+}
+
+#hole18 {
+    padding-right: 42px;
+    font-weight: bold;
+}
+
+#notes {
+    padding-right: 10px;
+    font-weight: bold;
+}

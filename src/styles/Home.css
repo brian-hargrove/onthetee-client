@@ -1,0 +1,14 @@
+body {
+    background-image: url('../assests/splashPage.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 75px;
+  }
+
+  .footer{
+    color:rgb(252, 212, 127);
+    margin-top: 400px;
+    padding: 0;
+
+}

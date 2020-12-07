@@ -3,6 +3,7 @@ import Header from './Header';
 import Register from './Register';
 import Login from './Login';
 import Footer from './Footer';
+import '../styles/Home.css';
 
 
 class Home extends Component {
@@ -22,12 +23,15 @@ class Home extends Component {
 
     render() { 
         return ( 
-            <div>
+            <div id="splashPage">
                 
-                <Register handleSuccessfulAuth={this.handleSuccessfulAuth} />
+                {/* <Register handleSuccessfulAuth={this.handleSuccessfulAuth} id="registerForm"/> */}
                 <Login handleSuccessfulAuth={this.handleSuccessfulAuth}/>
-                <Footer />
+            <div className="footer">
+             <Footer />
+            </div>    
             </div>
+            
          );
     }
 }

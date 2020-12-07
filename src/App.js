@@ -3,8 +3,10 @@ import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
 import Home from './components/Home';
 import Clubhouse from "./components/Clubhouse";
 import Sitebar from "./components/Navbar";
+import Register from "./components/Register";
 import EnterScore from "./components/EnterScore";
 import Scorecard from "./components/Scorecard";
+import './App.css'
 
 
 class App extends Component {
@@ -64,9 +66,9 @@ class App extends Component {
           )} />
           <Route 
             exact 
-            path={"/enterround"} 
+            path={"/user/register"} 
             render = {props => (
-              <EnterScore {...props} loggedInStatus={this.state.loggedInStatus} />
+              <Register {...props} loggedInStatus={this.state.loggedInStatus} />
           )} />
           <Route 
             exact 

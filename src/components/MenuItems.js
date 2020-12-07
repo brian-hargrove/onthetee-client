@@ -1,3 +1,6 @@
+import React, { Component } from 'react';
+import Register from '../components/Register'
+
 const MenuItems = [
     {
         title: 'Home',
@@ -12,8 +15,8 @@ const MenuItems = [
 
     },
     {
-        title: 'Enter Score',
-        url: '/enterscore',
+        title: 'Register',
+        url: '/user/register',
         cName: 'nav-links',
 
     },

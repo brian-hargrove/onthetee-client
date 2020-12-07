@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Form, Button, Input, FormGroup} from 'reactstrap';
 import UserInfo from './UserInfo';
 import APIURL from '../helpers/environment';
+import "../styles/Register.css";
 
 class Register extends Component {
     constructor(props) {
@@ -93,7 +94,7 @@ class Register extends Component {
 
     render() { 
         return ( 
-            <div id="registerForm">
+            <div className="registerForm">
                 <Form className="register" onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Input

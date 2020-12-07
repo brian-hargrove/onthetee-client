@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Input, Label, FormGroup, Button } from 'reactstrap';
 import APIURL from '../helpers/environment';
-
+import '../styles/EnterScore.css'
 
 class EnterScore extends Component {
     constructor(props) {
@@ -110,11 +110,11 @@ class EnterScore extends Component {
 
     render() { 
         return (
-            <div>
+            <div className="scoreForm">
                 <h3>Enter your score below</h3> 
                 <Form id="enterScore" onSubmit={this.handleSubmit} >
                     <FormGroup>
-                        <Label htmlfor="date">Date</Label>
+                        <Label htmlfor="date" id="date">Date</Label>
                         <Input
                             type="date"
                             name="date"
@@ -123,7 +123,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="golfcourse">Golf Course</Label>
+                        <Label htmlfor="golfcourse" id="golfCourse">Golf Course</Label>
                         <Input
                             type="text"
                             name="golfcourse"
@@ -133,17 +133,18 @@ class EnterScore extends Component {
                     </FormGroup>
                     
                     <FormGroup>
-                        <Label htmlfor="hole1">Hole 1</Label>
+                        <Label htmlfor="hole1" id="hole1">Hole 1</Label>
                         <Input
                             type="number"
                             name="hole1"
                             className="hole"
+                            
                             // onChange={this.handleChange}
                             onChange={this.handleHole1}
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole2">Hole 2</Label>
+                        <Label htmlfor="hole2" id="hole2">Hole 2</Label>
                         <Input
                             type="number"
                             name="hole2"
@@ -153,7 +154,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole3">Hole 3</Label>
+                        <Label htmlfor="hole3" id="hole3">Hole 3</Label>
                         <Input
                             type="number"
                             name="hole3"
@@ -162,7 +163,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole4">Hole 4</Label>
+                        <Label htmlfor="hole4" id="hole4">Hole 4</Label>
                         <Input
                             type="number"
                             name="hole4"
@@ -171,7 +172,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole5">Hole 5</Label>
+                        <Label htmlfor="hole5" id="hole5">Hole 5</Label>
                         <Input
                             type="number"
                             name="hole5"
@@ -180,7 +181,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole6">Hole 6</Label>
+                        <Label htmlfor="hole6" id="hole6">Hole 6</Label>
                         <Input
                             type="number"
                             name="hole6"
@@ -189,7 +190,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole7">Hole 7</Label>
+                        <Label htmlfor="hole7" id="hole7">Hole 7</Label>
                         <Input
                             type="number"
                             name="hole7"
@@ -198,7 +199,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole8">Hole 8</Label>
+                        <Label htmlfor="hole8" id="hole8">Hole 8</Label>
                         <Input
                             type="number"
                             name="hole8"
@@ -207,7 +208,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole9">Hole 9</Label>
+                        <Label htmlfor="hole9" id="hole9">Hole 9</Label>
                         <Input
                             type="number"
                             name="hole9"
@@ -216,7 +217,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole10">Hole 10</Label>
+                        <Label htmlfor="hole10" id="hole10">Hole 10</Label>
                         <Input
                             type="number"
                             name="hole10"
@@ -225,7 +226,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole11">Hole 11</Label>
+                        <Label htmlfor="hole11" id="hole11">Hole 11</Label>
                         <Input
                             type="number"
                             name="hole11"
@@ -234,7 +235,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole12">Hole 12</Label>
+                        <Label htmlfor="hole12" id="hole12">Hole 12</Label>
                         <Input
                             type="number"
                             name="hole12"
@@ -243,7 +244,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole13">Hole 13</Label>
+                        <Label htmlfor="hole13" id="hole13">Hole 13</Label>
                         <Input
                             type="number"
                             name="hole13"
@@ -252,7 +253,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole14">Hole 14</Label>
+                        <Label htmlfor="hole14" id="hole14">Hole 14</Label>
                         <Input
                             type="number"
                             name="hole14"
@@ -261,7 +262,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole15">Hole 15</Label>
+                        <Label htmlfor="hole15" id="hole15">Hole 15</Label>
                         <Input
                             type="number"
                             name="hole15"
@@ -270,7 +271,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole16">Hole 16</Label>
+                        <Label htmlfor="hole16" id="hole16">Hole 16</Label>
                         <Input
                             type="number"
                             name="hole16"
@@ -279,7 +280,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole17">Hole 17</Label>
+                        <Label htmlfor="hole17" id="hole17">Hole 17</Label>
                         <Input
                             type="number"
                             name="hole17"
@@ -288,7 +289,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="hole18">Hole 18</Label>
+                        <Label htmlfor="hole18" id="hole18">Hole 18</Label>
                         <Input
                             type="number"
                             name="hole18"
@@ -297,7 +298,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlfor="notes">Course Notes</Label>
+                        <Label htmlfor="notes" id="notes">Course Notes</Label>
                         <Input
                             type="text"
                             name="notes"
@@ -306,7 +307,7 @@ class EnterScore extends Component {
                         ></Input>
                     </FormGroup>
                     <Button
-                        className="button"
+                        className="buttonScore"
                         type="submit"
                         
                     >Save Score
