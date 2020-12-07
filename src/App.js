@@ -77,6 +77,13 @@ class App extends Component {
               <Scorecard {...props} loggedInStatus={this.state.loggedInStatus} />
             )}
           />
+           <Route 
+            exact 
+            path={"/enterround"} 
+            render = {props => (
+              <EnterScore {...props} loggedInStatus={this.state.loggedInStatus} />
+            )}
+          />
         </Switch>
         </BrowserRouter>
         
