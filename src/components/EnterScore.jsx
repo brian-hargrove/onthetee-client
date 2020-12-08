@@ -112,6 +112,7 @@ class EnterScore extends Component {
         return (
             <div className="scoreForm">
                 <h3>Enter your score below</h3> 
+                <h5 className="returnClubhouse"><a href="/clubhouse">Return to the clubhouse</a></h5>
                 <Form id="enterScore" onSubmit={this.handleSubmit} >
                     <FormGroup>
                         <Label htmlfor="date" id="date">Date</Label>
