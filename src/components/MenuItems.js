@@ -8,21 +8,21 @@ const MenuItems = [
         cName: 'nav-links',
 
     },
+    // {
+    //     title: 'Clubhouse',
+    //     url: '/clubhouse',
+    //     cName: 'nav-links',
+
+    // },
     {
-        title: 'Clubhouse',
-        url: '/clubhouse',
+        title: 'Login',
+        url: '/user/login',
         cName: 'nav-links',
 
     },
     {
         title: 'Register',
         url: '/user/register',
-        cName: 'nav-links',
-
-    },
-    {
-        title: 'User info',
-        url: '/userinfo',
         cName: 'nav-links',
 
     },

@@ -3,7 +3,7 @@ body {
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: 75px;
+    padding-bottom: 50px;
   }
 
   .footer{
@@ -11,4 +11,22 @@ body {
     margin-top: 400px;
     padding: 0;
 
+}
+
+#homeTitle {
+  color: black;
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'Lobster', cursive;
+
+}
+
+p {
+  color: black;
+  font-family: 'Roboto Condensed', sans-serif;
+  opacity: 10;
+  font-weight: bolder;
+  margin-top: 150px;
+  margin-left: 470px;
+  font-size: 1.5em;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Form, Button, Input, Label, FormGroup} from 'reactstrap';
 import APIURL from '../helpers/environment';
+import '../styles/Login.css';
 
 
 class Login extends Component {
@@ -40,12 +41,17 @@ class Login extends Component {
         })
         .then((response)=>response.json())
         .then((data)=> {
-            {this.props.handleSuccessfulAuth(data)};
+            if(data.error){
+                alert("Login went into the trees, Take a mulligan and try again");
+            }else {
+            // {this.props.handleSuccessfulAuth(data)};
             localStorage.setItem('token',data.sessionToken);
+            window.location.href='/clubhouse';}
            }    
         )
         .catch(error=>{
             console.log(error);
+            alert("Username and password do not match ")
         });
         
 
@@ -78,7 +84,7 @@ class Login extends Component {
                         />
                     </FormGroup>
                     <Button 
-                        className="button" type="submit">
+                        id="loginButton" type="submit">
                         Login
                     </Button>
                 </Form>

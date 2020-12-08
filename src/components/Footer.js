@@ -4,7 +4,7 @@ import '../styles/Footer.css'
 
 const Footer = () => {
     return (
-        <footer>
+        <footer id="footer">
             <Row>
                 <p>&copy;Brian Hargrove 2020 - All rights reserved</p>
             </Row>

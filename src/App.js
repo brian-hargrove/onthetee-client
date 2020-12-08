@@ -3,6 +3,7 @@ import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
 import Home from './components/Home';
 import Clubhouse from "./components/Clubhouse";
 import Sitebar from "./components/Navbar";
+import Login from "./components/Login";
 import Register from "./components/Register";
 import EnterScore from "./components/EnterScore";
 import UserInfo from "./components/UserInfo";
@@ -70,6 +71,12 @@ class App extends Component {
             path={"/user/register"} 
             render = {props => (
               <Register {...props} loggedInStatus={this.state.loggedInStatus} />
+          )} />
+           <Route 
+            exact 
+            path={"/user/login"} 
+            render = {props => (
+              <Login {...props} loggedInStatus={this.state.loggedInStatus} />
           )} />
           <Route 
             exact 

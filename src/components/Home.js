@@ -24,11 +24,12 @@ class Home extends Component {
     render() { 
         return ( 
             <div id="splashPage">
-                
+                <h1 id="homeTitle">Welcome to On The Tee</h1>
+                <p>This is a website designed for the golfer, Amatuer to Pro, Young to Old, <br/>to store their rounds.  We will be adding exciting new features in the future, <br/>so please come back. But for now, please register so you can enter the Clubhouse. <br/>Or Login if your have already created an account. </p>
                 {/* <Register handleSuccessfulAuth={this.handleSuccessfulAuth} id="registerForm"/> */}
-                <Login handleSuccessfulAuth={this.handleSuccessfulAuth}/>
+                {/* <Login handleSuccessfulAuth={this.handleSuccessfulAuth}/> */}
             <div className="footer">
-             <Footer />
+             <Footer className="footer"/>
             </div>    
             </div>
             

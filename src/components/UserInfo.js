@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from 'reactstrap';
 import APIURL from '../helpers/environment';
+import '../styles/UserInfo.css';
+
 
 class UserInfo extends Component {
     constructor(props){
@@ -53,13 +55,13 @@ class UserInfo extends Component {
     
     render() { 
         return (
-            <div>
+            <div className="userInfoForm">
                 <h1>Welcome to On The Tee</h1>
                 <p> Before you begin, we would like to get to know you.</p>
                 <Form className="userInfoForm" onSubmit={this.userInfoSubmit}>
                     <FormGroup>
                         <Input
-                            id="handed"
+                            id="hand"
                             name="hand"
                             placeholder="Are you right-handed, left-handed or both"
                             type="text"
@@ -88,7 +90,7 @@ class UserInfo extends Component {
                         ></Input>
                     </FormGroup>
                     <Button
-                    className="button"
+                    id="userInfoButton"
                     type="submit"
                 >Submit</Button>
                 </Form>

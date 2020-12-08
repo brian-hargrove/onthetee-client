@@ -1,3 +1,18 @@
+Welcome to On The Tee.
+
+The name On The Tee comes from professional golf.  Before a golfer would take his/her tee shot on the first hole of the day, the announcer would say "Now, On The Tee ..."
+
+In Version 1.0, the user will be able to create an account.  The creation of an account will allow the user to be able to keep track of their rounds.  The user will also be able to view all of their saved rounds.
+
+Future versions will include the following enhancements:
+    - allow the user to edit or delete their rounds.
+    - user will be able to reset password.
+    - user will be able to display their rounds for a particular golf course on a that courses scorecard.
+    - user will be able to store specific scorecard information (i.e. par, yards, handicap).
+    - user will be able to share, via email, scorecards with their friends.
+    - search for golf courses for a certain city.
+    
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
