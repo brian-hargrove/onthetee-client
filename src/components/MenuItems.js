@@ -14,6 +14,13 @@ const MenuItems = [
     //     cName: 'nav-links',
 
     // },
+    
+    {
+        title: 'UserInfo',
+        url: '/userinfo',
+        cName: 'nav-links',
+
+    },
     {
         title: 'Login',
         url: '/user/login',

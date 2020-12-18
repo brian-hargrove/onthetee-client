@@ -31,11 +31,7 @@ class Scorecard extends Component {
             notes: "",
             scores: ""
         }
-
     }
-    
-
-
 
     populateCard (){
 
@@ -51,7 +47,6 @@ class Scorecard extends Component {
 
         
         .catch((error)=>console.log(error));
-        
     }
     
     displayScores (){
@@ -174,14 +169,11 @@ class Scorecard extends Component {
                             <th> 18</th>
                             <th>OUT</th>
                             <th>Total</th>
-                           
                         </tr>
-                        
                     </thead>
                     <tbody>
                         {this.state.scores ? this.displayScores() : this.populateCard()}                        
                     </tbody>
-                   
                 </Table>
             </div>
          );
