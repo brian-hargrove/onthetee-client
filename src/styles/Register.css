@@ -1,45 +1,55 @@
 #registerUsername {
   
-  margin-left: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
   margin-top: 10px;
   height: 50px;
   font-size: 20px;
   text-align: center;
+  background-color:rgb(250, 250, 250, 0.6);
+
+  
 
 }
 
 #registerEmail {
-  
-  margin-left: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
   margin-top: 10px;
   height: 50px;
   font-size: 20px;
   text-align: center;
-
+  background-color:rgb(250, 250, 250, 0.6);
 }
 
 #registerPassword {
-  
-  margin-left: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
   margin-top: 10px;
   height: 50px;
   font-size: 20px;
   text-align: center;
-
+  background-color:rgb(250, 250, 250, 0.6);
 }
 
 #registerPasswordConfirm {
-  
-  margin-left: 500px;
-  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
   height: 50px;
   font-size: 20px;
   text-align: center;
-
+  background-color:rgb(250, 250, 250, 0.6);
 }
 
 #registerButton {
-  margin-left: 565px;
+  margin-left: 40vw;
+  
+  
+  width: 25%;
   margin-top: 10px;
   background-color: #6568F4;
   color: #fff;
