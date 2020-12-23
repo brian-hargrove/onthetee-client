@@ -8,13 +8,18 @@ const MenuItems = [
         cName: 'nav-links',
 
     },
-    // {
-    //     title: 'Clubhouse',
-    //     url: '/clubhouse',
-    //     cName: 'nav-links',
+    {
+        title: 'Clubhouse',
+        url: '/clubhouse',
+        cName: 'nav-links',
 
-    // },
-    
+    },
+    {
+        title: 'Enter Score',
+        url: '/enterScore',
+        cName: 'nav-links',
+
+    },
     {
         title: 'UserInfo',
         url: '/userinfo',

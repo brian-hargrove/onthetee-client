@@ -8,6 +8,8 @@ import Register from "./components/Register";
 import EnterScore from "./components/EnterScore";
 import UserInfo from "./components/UserInfo";
 import Scorecard from "./components/Scorecard";
+import MediaQuery from 'react-responsive';
+
 import './App.css'
 
 
