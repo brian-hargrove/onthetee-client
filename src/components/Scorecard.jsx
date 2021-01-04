@@ -143,7 +143,7 @@ class Scorecard extends Component {
         return (
             <div className="divScorecard">
               <h5 className="returnClubhouse"><a href="/clubhouse">Return to the clubhouse</a></h5> 
-                <Table className="scoreTable" hover>
+                <Table className="scoreTable" size="sm" hover>
                     <thead >
                         <tr >
                             <th>Date</th>
