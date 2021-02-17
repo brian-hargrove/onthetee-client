@@ -1,79 +1,72 @@
-.userInfoForm {    
-    margin-left: 100%;
-    padding-top: 25%;
-    padding-bottom: 25%;
-    color: rgb(78, 54, 3);
-    border: none;
+.userInfoForm {
+  margin-left: 100%;
+  padding-top: 25%;
+  padding-bottom: 25%;
+  width: 100%;
+  color: rgb(78, 54, 3);
+  border: none;
 }
 
 #userInfoPara {
-    color: rgb(245, 221, 198);
-    padding-top: 1px;
-    text-align: center;
-    background-color: rgba(204, 219, 240, 0.15);       
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-
+  color: rgb(245, 221, 198);
+  padding-top: 1px;
+  text-align: center;
+  background-color: rgba(204, 219, 240, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
 }
 
 #modalHeaderUserInfo {
-    background-color: #ccdbf0;
-    border: none;
+  background-color: #ccdbf0;
+  border: none;
 }
 
 #modalBodyUserInfo {
-    background-image: url(../assests/sandTrap.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: none;
+  background-image: url(../assests/sandTrap.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
 }
 
 #modalFooterUserInfo {
-    background-color: #90bb49;
-    border: none;
+  background-color: #90bb49;
+  border: none;
 }
 #hand {
-    margin-left: -450px;
-    margin-top: -100px;
-    width: 400px;
-    height: 40px;
-    text-align: center;
-    opacity: .8;
+  margin-left: -450px;
+  margin-top: -100px;
+  width: 400px;
+  height: 40px;
+  text-align: center;
+  opacity: 0.8;
 }
 
 #favCourse {
-    margin-left: -450px;
-    margin-top: 10px;
-    width: 400px;
-    height: 40px;
-    text-align: center;
-    opacity: .8;
+  margin-left: -450px;
+  margin-top: 10px;
+  width: 400px;
+  height: 40px;
+  text-align: center;
+  opacity: 0.8;
 }
-
 
 #favGolfer {
-    margin-left: -450px;
-    margin-top: 10px;
-    width: 400px;
-    height: 40px;
-    text-align: center;
-        opacity: .8;
+  margin-left: -450px;
+  margin-top: 10px;
+  width: 400px;
+  height: 40px;
+  text-align: center;
+  opacity: 0.8;
 }
 
-
 #userInfoButton {
-    margin-left: -350px;
-    margin-top: 10px;
-    background-color: #6568F4;
-    color: #fff;
-    box-shadow:
-  0 2.3px 1.9px rgba(0, 0, 0, 0.018),
-  0 5.4px 4.3px rgba(0, 0, 0, 0.026),
-  0 9.7px 7.7px rgba(0, 0, 0, 0.032),
-  0 16.1px 12.8px rgba(0, 0, 0, 0.038),
-  0 26.5px 21.2px rgba(0, 0, 0, 0.044),
-  0 46.2px 37px rgba(0, 0, 0, 0.052),
-  0 100px 80px rgba(0, 0, 0, 0.07)
-;
+  margin-left: -350px;
+  margin-top: 10px;
+  background-color: #6568f4;
+  color: #fff;
+  box-shadow: 0 2.3px 1.9px rgba(0, 0, 0, 0.018),
+    0 5.4px 4.3px rgba(0, 0, 0, 0.026), 0 9.7px 7.7px rgba(0, 0, 0, 0.032),
+    0 16.1px 12.8px rgba(0, 0, 0, 0.038), 0 26.5px 21.2px rgba(0, 0, 0, 0.044),
+    0 46.2px 37px rgba(0, 0, 0, 0.052), 0 100px 80px rgba(0, 0, 0, 0.07);
 }

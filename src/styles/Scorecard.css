@@ -1,31 +1,29 @@
 .scoreTable {
-    margin-right: auto;
-    margin-left: auto;
-    color: red;
-    background-color: rgb(196,164,118);
-    
-    width: 75vw;
-    
+  margin-right: auto;
+  margin-left: auto;
+  color: white;
+  background-color: rgb(196, 164, 118);
+
+  width: 75vw;
 }
 
-tr:hover {background-color:#e7e0e0;}
-
+tr:hover {
+  background-color: #e7e0e0;
+}
 
 th {
-    background-color: rgb(80,104,127);
-    color: whitesmoke;
+  background-color: rgb(80, 104, 127);
+  color: whitesmoke;
 }
-
 
 .returnClubhouse {
-    text-align: center;
-    text-decoration: none;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 8px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 8px;
 }
 
-.divScorecard{
-    /* background-image:url(../assests/scorecard.jpg); */
-    
+.divScorecard {
+  /* background-image:url(../assests/scorecard.jpg); */
 }
